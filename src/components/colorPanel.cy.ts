@@ -12,3 +12,14 @@ describe('ColorPanel', () => {
     cy.get('div').should('have.css', 'background-color', 'rgba(0, 0, 0, 0)');
   });
 });
+
+describe("App", () => {
+  it("should update the color when sliders are changed", () => {
+    cy.visit("/");
+    cy.get("[data-cy=red-slider]").invoke("val", 255).trigger("change");
+  });
+  it.only("should update the color when sliders are changed", () => {
+    cy.visit("/");
+    cy.get("[data-cy=green-slider]").invoke("val", 200).trigger("change");
+  });
+});

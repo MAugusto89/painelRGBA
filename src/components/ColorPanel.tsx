@@ -1,5 +1,5 @@
 // ColorPanel.tsx
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface ColorPanelProps {
   red: number;
@@ -8,10 +8,17 @@ interface ColorPanelProps {
   alpha: number;
 }
 
-const ColorSquare = styled.div<Pick<ColorPanelProps, 'red' | 'green' | 'blue' | 'alpha'>>`
+const ColorSquare = styled.div<
+  Pick<ColorPanelProps, "red" | "green" | "blue" | "alpha">
+>`
   width: 200px;
   height: 200px;
-  background-color: rgba(${props => props.red}, ${props => props.green}, ${props => props.blue}, ${props => props.alpha});
+  background-color: rgba(
+    ${(props) => props.red},
+    ${(props) => props.green},
+    ${(props) => props.blue},
+    ${(props) => props.alpha}
+  );
 `;
 
 const ColorPanel = ({ red, green, blue, alpha }: ColorPanelProps) => {
